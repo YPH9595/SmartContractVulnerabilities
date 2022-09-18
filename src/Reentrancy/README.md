@@ -1,1 +1,1 @@
-showcasing a vulnerable smart contract, and an attacker smart contract, with JS code ready to run, with a discription of how to run the code. The original discription that is a complete source of STG, will be in the docs.
+Explanation coming soon.
